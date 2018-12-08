@@ -1,5 +1,5 @@
 import numpy as np
-
+import re
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
@@ -90,12 +90,25 @@ def temperatureObs():
 def calc_temps(start):
     """ Fetch the TMIN, TAVG, and TMAX for a given start date and end date."""
     
+    sql = re.findall('[=;^]', start)
+    for entry in sql:
+        if entry == ';':
+            response = 'You must enter a valid date in this format YYYY-MM-DD'
+            return jsonify(response)
+        if entry == '=':
+            response = 'You must enter a valid date in this format YYYY-MM-DD'
+            return jsonify(response)
+       
+    print('I made it here')
     results = (session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs),
     func.max(Measurement.tobs)).filter(Measurement.date >= start).all())
 
+    # Adding some formatting so that user results are more descriptive
+    modResults = []
+    for x in results:
+        modResults.append({'Min Temp': x[0], 'Avg Temp': x[1], 'Max Temp': x[2]})
+    return jsonify(modResults)
 
-
-    return jsonify(results)
 # @app.route("/api/v1.0/<start>/<end>")
 
 @app.route("/api/v1.0/<start>/<end>")
@@ -109,10 +122,32 @@ def calc_temperatures(start, end):
     Returns:
         TMIN, TAVE, and TMAX
     """
+    sql = re.findall('[=;^]', start)
+    for entry in sql:
+        if entry == ';':
+            response = 'You must enter a valid date in this format YYYY-MM-DD'
+            return jsonify(response)
+        if entry == '=':
+            response = 'You must enter a valid date in this format YYYY-MM-DD'
+            return jsonify(response)
+
+    sql_end = re.findall('[=;^]', end)
+    for entry in sql_end:
+        if entry == ';':
+            response = 'You must enter a valid date in this format YYYY-MM-DD'
+            return jsonify(response)
+        if entry == '=':
+            response = 'You must enter a valid date in this format YYYY-MM-DD'
+            return jsonify(response)
+       
+    print('I made it here')
     resultValue = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
         filter(Measurement.date >= start).filter(Measurement.date <= end).all()
-
-    return jsonify(resultValue)
+    # Adding some formatting so that user results are more descriptive
+    modResultValues = []
+    for x in resultValue:
+        modResultValues.append({'Min Temp': x[0], 'Avg Temp': x[1], 'Max Temp': x[2]})
+    return jsonify(modResultValues)
 
 if __name__ == "__main__":
     app.run(debug=True)
