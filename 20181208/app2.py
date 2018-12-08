@@ -150,4 +150,4 @@ def calc_temperatures(start, end):
     return jsonify(modResultValues)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
