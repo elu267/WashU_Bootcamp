@@ -5,26 +5,32 @@
     <title>WeatherPy Comparisons</title>
     <meta charset="UTF-8">
     <meta name="google" content="notranslate">
-    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Language" content="en">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<!-- Navigation Section Begins-->
+    <!-- Navigation Section Begins-->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand">Unterreiner</a>
+                <div class="navbar-brand">Unterreiner</div>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.html">Latitude Home</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+
+            <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="comparison.html">Plots <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="plot_temp.html">Latitude vs Temperature</a></li>
@@ -38,34 +44,36 @@
             </ul>
         </div>
     </nav>
-<!-- Navigation Section Ends -->
+    <!-- End Navigation Section -->
 
-<!-- Main page content begins -->
+    <!-- Main page content begins -->
 
-<h1 class="elu-indent englishgreen">Comparison: Latitude vs X</h1>
-<hr>
-<h4 class="elu-indent pinegreen">Click any plot to get an in-depth analysis</h4>
-<div class="row">
-    <div class="col-md-push-1 col-sm-12 col-md-6">
-        <h3 class="elu-indent burntumber">vs Max Temperature</h3><a href="plot_temp.html"><img src="TemperaturesByLat.png"></a>
+    <h1 class="elu-indent englishgreen">Comparison: Latitude vs X</h1>
+    <hr>
+    <h4 class="elu-indent pinegreen">Click any plot to get an in-depth analysis</h4>
+    <div class="row">
+        <div class="col-md-push-1 col-sm-12 col-md-6">
+            <h3 class="elu-indent burntumber">vs Max Temperature</h3>
+            <a href="plot_temp.html"><img src="TemperaturesByLat.png"></a>
+        </div>
+        <div class="col-md-pull-1 col-sm-12 col-md-6">
+            <h3 class="elu-indent burntumber">vs Humidity</h3>
+            <a href="plot_humid.html"></ahref><img src="HumidityByLat.png"></a>
+        </div>
     </div>
-    <div class="col-md-pull-1 col-sm-12 col-md-6">
-        <h3 class="elu-indent burntumber">vs Humidity</h3><a href="plot_humid.html"></ahref><img src="HumidityByLat.png"></a>
+    <div class="row">
+        <div class="col-md-push-1 col-sm-12 col-md-6">
+            <h3 class="elu-indent burntumber">vs Cloudiness</h3>
+            <a href="plot_cloud.html"><img src="CloudsByLat.png"></a>
+        </div>
+        <div class="col-md-pull-1 col-sm-12 col-md-6">
+            <h3 class="elu-indent burntumber">vs Wind Speed</h3>
+            <a href="plot_wind.html"><img src="WindSpeedByLat.png"></a>
+        </div>
+
     </div>
-</div>
-<div class="row">
-    <div class="col-md-push-1 col-sm-12 col-md-6">
-        <h3 class="elu-indent burntumber">vs Cloudiness</h3><a href="plot_cloud.html"><img src="CloudsByLat.png"></a>
     </div>
-    <div class="col-md-pull-1 col-sm-12 col-md-6">
-        <h3 class="elu-indent burntumber">vs Wind Speed</h3><a href="plot_wind.html"><img src="WindSpeedByLat.png"></a>
-    </div>
-       
-    </div>
-</div>
 
 </body>
+
 </html>
-
-
-  

@@ -2,103 +2,105 @@
 <html lang="en">
 
 <head>
-  <title>WeatherPy Project</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+    <title>WeatherPy Project</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <!-- Begin Main Section -->
 
 <body class="elu-background">
-  <!-- Navigation Section Begins-->
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand">Unterreiner</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Latitude Home</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="comparison.html">Plots <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="plot_temp.html">Latitude vs Temperature</a></li>
-            <li><a href="plot_humid.html">Latitude vs Humidity</a></li>
-            <li><a href="plot_cloud.html">Latitude vs Cloudiness</a></li>
-            <li><a href="plot_wind.html">Latitude vs Wind Speed</a></li>
-          </ul>
-        </li>
-        <li><a href="comparison.html"> Comparison</a></li>
-        <li><a href="data.html"> Data</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!-- End Navigation Section -->
-
-  <!-- Start Main Content-->
-  <section class="content">
-    <!-- Main Row -->
-    <div class="row">
-      <!-- Left Side of Page Start -->
-      <section class="col-md-8 elu-left">
-        <!-- Box -->
-        <div class="box box-info elu-boxbg">
-          <div class="box-header with-border">
-            <h1 class="elu-indent englishgreen">Summary: Latitude vs. X</h1>
-            <hr class="elu-indent">
-            <div class="box-body elu-clearfix">
-              <img class="wrap" src="TemperaturesByLat.png">
-              <p class="elu-indent">
-                The purpose of the WeatherPy project was to analyze to answer the question, "what's the weather like as we
-                approach the equator?" The goals of the project were to take everything we have learned about Python, Python
-                requests, APIs, and JSON traversals to answer the question.</p>
-
-              <p class="elu-indent">
-                In the project, I created a Python script to visualize the weather of 500+ cities across the world
-                with varying distances from the equator. I utilized matplotlib and citipy 0.0.5 Python libraries and the
-                OpenWeatherMap API. The objective was to build a series of scatter plots to showcase the following 
-                relationships with latitude: temperature, humidity, cloudiness and wind speed. This site includes the visualizations, 
-                and source data created as part of this analysis as well as explanations and descriptions of any trends and correlations
-                witnessed.
-              </p>
+    <!-- Navigation Section Begins-->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">Unterreiner</div>
             </div>
-          </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Latitude Home</a></li>
+            </ul>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+
+            <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="comparison.html">Plots <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="plot_temp.html">Latitude vs Temperature</a></li>
+                        <li><a href="plot_humid.html">Latitude vs Humidity</a></li>
+                        <li><a href="plot_cloud.html">Latitude vs Cloudiness</a></li>
+                        <li><a href="plot_wind.html">Latitude vs Wind Speed</a></li>
+                    </ul>
+                </li>
+                <li><a href="comparison.html"> Comparison</a></li>
+                <li><a href="data.html"> Data</a></li>
+            </ul>
         </div>
-        <!-- End Box -->
-      </section>
-      <!-- Left Side End -->
-      <!-- Right Side of Page Start-->
-      <section class="col-md-4">
-        <div class="box box-info elu-boxbg">
-          <div class="box-header with-border">
-            <h1 class="elu-indent englishgreen">Visualizations</h1>
-            <hr class="elu-indent">
-            <div class="box-body">
-              <div class="row">
-                <div class="col-xs-3 col-md-6">
-                    <a href="plot_temp.html"><img src="TemperaturesByLat.png" width=100% height=auto max-width=100%></a>
+    </nav>
+    <!-- End Navigation Section -->
+
+    <!-- Start Main Content-->
+    <section class="content">
+        <!-- Main Row -->
+        <div class="row">
+            <!-- Left Side of Page Start -->
+            <section class="col-md-8 elu-left">
+                <!-- Box -->
+                <div class="box box-info elu-boxbg">
+                    <div class="box-header with-border">
+                        <h1 class="elu-indent englishgreen">Summary: Latitude vs. X</h1>
+                        <hr class="elu-indent">
+                        <div class="box-body elu-clearfix">
+                            <img class="wrap" src="TemperaturesByLat.png">
+                            <p class="elu-indent">
+                                The purpose of the WeatherPy project was to analyze to answer the question, "what's the weather like as we approach the equator?" The goals of the project were to take everything we have learned about Python, Python requests, APIs, and JSON traversals
+                                to answer the question.</p>
+
+                            <p class="elu-indent">
+                                In the project, I created a Python script to visualize the weather of 500+ cities across the world with varying distances from the equator. I utilized matplotlib and citipy 0.0.5 Python libraries and the OpenWeatherMap API. The objective was to build
+                                a series of scatter plots to showcase the following relationships with latitude: temperature, humidity, cloudiness and wind speed. This site includes the visualizations, and source data created as part of this analysis
+                                as well as explanations and descriptions of any trends and correlations witnessed.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xs-3 col-md-6">
-                    <a href="plot_humid.html"><img src="HumidityByLat.png" width=100% height=auto max-width=100%></a>
-                </div> 
-                  <div class="col-xs-3 col-md-6">
-                      <a href="plot_cloud.html"><img src="CloudsByLat.png" width=100% height=auto max-width=100%></a>
-                  </div>
-                  <div class="col-xs-3 col-md-6">
-                      <a href="plot_wind.html"><img src="WindSpeedByLat.png" width=100% height=auto max-width=100%></a>
-                  </div>
+                <!-- End Box -->
+            </section>
+            <!-- Left Side End -->
+            <!-- Right Side of Page Start-->
+            <section class="col-md-4">
+                <div class="box box-info elu-boxbg">
+                    <div class="box-header with-border">
+                        <h1 class="elu-indent englishgreen">Visualizations</h1>
+                        <hr class="elu-indent">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-3 col-md-6">
+                                    <a href="plot_temp.html"><img src="TemperaturesByLat.png" width=100% height=auto max-width=100%></a>
+                                </div>
+                                <div class="col-xs-3 col-md-6">
+                                    <a href="plot_humid.html"><img src="HumidityByLat.png" width=100% height=auto max-width=100%></a>
+                                </div>
+                                <div class="col-xs-3 col-md-6">
+                                    <a href="plot_cloud.html"><img src="CloudsByLat.png" width=100% height=auto max-width=100%></a>
+                                </div>
+                                <div class="col-xs-3 col-md-6">
+                                    <a href="plot_wind.html"><img src="WindSpeedByLat.png" width=100% height=auto max-width=100%></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-          </div>
+            </section>
         </div>
-      </section>
-    </div>
-  </section>
+    </section>
 
 </body>
 

@@ -28,7 +28,7 @@ Anti-Flash White #f0f3f5
     color: #f0f3f5;
 }
 .elu-background {
-	background-color: #d3d3d3; /* gray */
+	background-color: #bebebe; /* grey */
 	}
 .elu-boxbg {
 	background-color: white; /* white and inserted after box-info class*/
@@ -45,21 +45,21 @@ Anti-Flash White #f0f3f5
      }
 
 
-/* Style that will ONLY be applied at screen sizes below 480 pixels */
+/* Here we define some styles that will ONLY be applied at screen sizes below 480 pixels */
 @media (max-width: 480px) {
  
     .elu-left {
       background: white;
-      width: auto;
+      width: auto%;
       height: auto;
       max-width: auto;
     
     } 
     .elu-right {
       background: white;
-      width: auto;
+      width: auto%
       height: auto;
-      max-width: auto;
+      max-width: auto%
       }
    
     .elu-clearfix {

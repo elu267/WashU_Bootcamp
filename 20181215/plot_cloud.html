@@ -4,27 +4,32 @@
 <head>
     <title>WeatherPy Cloudiness Plot</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <!-- Begin Main Section -->
 
-<body class="elu-background"> 
+<body class="elu-background">
     <!-- Navigation Section Begins-->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand">Unterreiner</a>
+                <div class="navbar-brand">Unterreiner</div>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.html">Latitude Home</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="comparison.html">Plots<span
-                            class="caret"></span></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+
+            <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="comparison.html">Plots <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="plot_temp.html">Latitude vs Temperature</a></li>
                         <li><a href="plot_humid.html">Latitude vs Humidity</a></li>
@@ -37,7 +42,7 @@
             </ul>
         </div>
     </nav>
-    <!-- Navigation Section Ends -->
+    <!-- End Navigation Section -->
 
     <!-- Main page content begins -->
     <section class="content">
@@ -51,42 +56,41 @@
                         <h1 class="elu-indent englishgreen">Max Cloudiness</h1>
                         <hr class="elu-indent">
                         <div class="box-body elu-clearfix">
-                        <img class="wrap" src="CloudsByLat.png" >
-                        <p>The current weather data API was used to access current weather data for 500+ cities. The weather data is frequently updated based on global
-    models and data from more than 40,000 weather stations.</p>
-<p>The data for this project was obtained on October 26, 2018. As you can see, there was no strong relationship between latitude and cloudiness.</p>
-                    </div>
-                </div>
-        </div>
-        <!-- End Box -->
-    </section>
-    <!-- Left Side End -->
-    <!-- Right Side of Page Start-->
-    <section class="col-md-4 elu-right">
-        <div class="box box-info elu-boxbg">
-            <div class="box-header with-border">
-                <h1 class="elu-indent englishgreen">Visualizations</h1>
-                <hr class="elu-indent">
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-xs-3 col-md-6">
-                            <a href="plot_temp.html"><img src="TemperaturesByLat.png" width=100% height=auto max-width=100%></a>
-                        </div>
-                        <div class="col-xs-3 col-md-6">
-                            <a href="plot_humid.html"></ahref><img src="HumidityByLat.png" width=100% height=auto max-width=100%></a>
-                        </div>
-                        <div class="col-xs-3 col-md-6">
-                            <a href="plot_cloud.html"><img src="CloudsByLat.png" width=100% height=auto max-width=100%></a>
-                        </div>
-                        <div class="col-xs-3 col-md-6">
-                            <a href="plot_wind.html"><img src="WindSpeedByLat.png" width=100% height=auto max-width=100%></a>
+                            <img class="wrap" src="CloudsByLat.png">
+                            <p>The current weather data API was used to access current weather data for 500+ cities. The weather data is frequently updated based on global models and data from more than 40,000 weather stations.</p>
+                            <p>The data for this project was obtained on October 26, 2018. As you can see, there was no strong relationship between latitude and cloudiness.</p>
                         </div>
                     </div>
                 </div>
-            </div>
+                <!-- End Box -->
+            </section>
+            <!-- Left Side End -->
+            <!-- Right Side of Page Start-->
+            <section class="col-md-4 elu-right">
+                <div class="box box-info elu-boxbg">
+                    <div class="box-header with-border">
+                        <h1 class="elu-indent englishgreen">Visualizations</h1>
+                        <hr class="elu-indent">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-3 col-md-6">
+                                    <a href="plot_temp.html"><img src="TemperaturesByLat.png" width=100% height=auto max-width=100%></a>
+                                </div>
+                                <div class="col-xs-3 col-md-6">
+                                    <a href="plot_humid.html"></ahref><img src="HumidityByLat.png" width=100% height=auto max-width=100%></a>
+                                </div>
+                                <div class="col-xs-3 col-md-6">
+                                    <a href="plot_cloud.html"><img src="CloudsByLat.png" width=100% height=auto max-width=100%></a>
+                                </div>
+                                <div class="col-xs-3 col-md-6">
+                                    <a href="plot_wind.html"><img src="WindSpeedByLat.png" width=100% height=auto max-width=100%></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-    </div>
     </section>
 
 </body>
