@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mission to Mars</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<!-- Begin Main Section -->
+
+<body>
+    <!-- Navigation Section Begins-->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">Unterreiner</div>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="http://127.0.0.1:5000/">Home</a></li>
+            </ul>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                  <span class="sr-only">Toggle navigation</span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                              </button>
+
+            <!-- <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">More Info<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="sources.html">Sources</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </li>
+            </ul> -->
+        </div>
+    </nav>
+    <!-- Start of Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-push-2">
+                <h1>About</h1>
+                <p>This assignment entailed building a web application that scrapes various websites for data related to the Mission to Mars theme. The objective was to display the information from each source in a single HTML page.</p>
+                <br>
+                <p>The techniques and tools used to compile this information included:</p>
+                <li>Python Modules such as Pandas, Time, Beautiful Soup, Splinter, Requests, Pymongo</li>
+                <li>Jupyter Notebook</li>
+                <li>Flask Framework</li>
+                <li>MongoDB</li>
+                <li>HTML/CSS and the Bootstrap Framework</li>
+                <br>
+                <p>A Jupyter notebook was leveraged to test the scraping and analysis. Several websites were scraped in order to gather the following information:</p>
+                <li>NASA Mars News</li>
+                <li>JPL Mars Space Images (Featured Image)</li>
+                <li>Mars Weather</li>
+                <li>Mars Facts</li>
+                <li>Mars Hemispheres</li>
+                <br>
+                <p>Once the scraping was complete, the information obtained was stored in a Python dictionary. Next, I converted the Jupyter notebook into a Python script that could be called via a function. I used the Flask framework to create a connection
+                    to Mongo database that was used to store the scraped information. Additionally, I created routes to tell Flask what URL should trigger the functions. For example, the root "/" route was created in order to query my Mongo database and
+                    pass the scraped information about Mars into an HTML template used to display the data. Another route, "/scrape" route triggered the function that runs the scraping script. </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

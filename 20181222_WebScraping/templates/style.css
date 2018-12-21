@@ -1,0 +1,88 @@
+/* color pallet
+
+English Green #19535f
+Pine Green #0b7a75
+Dark Vanilla #d7c9aa
+Burnt Umber #7b2d26
+Anti-Flash White #f0f3f5 
+
+*/
+
+.elu-indent {
+    margin-left: 25px;
+}
+
+.englishgreen {
+    color: #19535f;
+}
+
+.pinegreen {
+    color: #0b7a75;
+}
+
+.vanilla {
+    color: #d7c9aa;
+}
+
+.burntumber {
+    color: #7b2d26;
+}
+
+.white {
+    color: #f0f3f5;
+}
+
+.elu-background {
+    background-color: #0b7a75;
+    /* pinegreen */
+}
+
+.elu-jumbotron {
+    background-color: #0b7a75;
+}
+
+.wrap {
+    float: left;
+}
+
+.elu-clearfix {
+    overflow: auto;
+}
+
+.fit-image {
+    width: 25%;
+    object-fit: cover;
+    height: 25px;
+    /* only if you want fixed height */
+}
+
+.elu-center {
+    justify-content: center;
+}
+
+
+/* Here we define some styles that will ONLY be applied at screen sizes below 480 pixels */
+
+@media only screen and (max-width: 480px) {
+    .elu-left {
+        background: white;
+        width: auto;
+        height: auto;
+        max-width: auto;
+    }
+    .elu-right {
+        background: white;
+        width: auto;
+        height: auto;
+        max-width: auto;
+    }
+    .elu-clearfix {
+        overflow: auto;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .body {
+        background-color: white;
+    }
+}
