@@ -1,9 +1,23 @@
 // from data.js - holds the sightings data
 var sightings = data;
 
+// converting array of object values to upper case for all keys that contain string values
+sightings.forEach(function(a) { // begin loop
+    ['city', 'state', 'country', 'durationMinutes', 'shape', 'comments'].forEach(function(k) {
+        if (typeof a[k] === 'string') {
+            a[k] = a[k].toUpperCase();
+        }
+    });
+});
+
+// console.log(sightings);
+
 // create the drop down list for selecting a shape
 var shapeUnique = [...new Set(sightings.map(item => item.shape))];
 console.log(shapeUnique); // print results to test results
+
+shapeUnique.sort();
+console.log(shapeUnique);
 
 // populating the drop down menu
 var select = document.getElementById("shape"); // getting a reference to the shape ID
@@ -22,11 +36,11 @@ var submit = d3.select("#filter-btn"); // setting variable to select the filter 
 // update function to update the table with a new dataset
 function updateTable(filteredReport) { // declaring a function called updateTable
     tbody.html(''); // get the html contents of the first element in the set
-    filteredReport.forEach((toBeDetermined) => {
-        var row = tbody.append('tr');
-        Object.entries(toBeDetermined).forEach(([key, value]) => {
-            var cell = tbody.append('td');
-            cell.text(value);
+    filteredReport.forEach((toBeDetermined) => { //start of the loop
+        var row = tbody.append('tr'); // appending rows to the table body
+        Object.entries(toBeDetermined).forEach(([key, value]) => { // start of next loop
+            var cell = row.append('td'); // appending cells to rows
+            cell.text(value); // adding cell values to the table cells
         });
     });
 }
@@ -92,23 +106,29 @@ function filterAll(dataset) {
     var dateInput = dateElement.property("value");
     // prints the value that was entered into the input form
     console.log(dateInput);
+    // selecting the city element
     var cityElement = d3.select('#city');
+    // capturing the user input for city
     var cityInput = cityElement.property("value");
-    cityInput = cityInput.toLowerCase();
+    // converting the user input to upper case so that the filter works even if they enter text in lower or proper case
+    cityInput = cityInput.toUpperCase();
+    // prints the value entered into the form by the user
     console.log(cityInput);
+    //rinse and repeat for remaining form fields
     var stateElement = d3.select('#state');
     var stateInput = stateElement.property("value");
-    stateInput = stateInput.toLowerCase();
+    stateInput = stateInput.toUpperCase();
     console.log(stateInput);
     var countryElement = d3.select('#country');
     var countryInput = countryElement.property("value");
-    countryInput = countryInput.toLowerCase();
+    countryInput = countryInput.toUpperCase();
     console.log(countryInput);
     var shapeElement = d3.select('#shape');
     var shapeInput = shapeElement.property("value");
-    shapeInput = shapeInput.toLowerCase();
+    shapeInput = shapeInput.toUpperCase();
     console.log(shapeInput);
 
+    // this section checks to see if the user input something into the form field. If not, it is skipped
     if (dateInput != "") {
         dataset = dataset.filter(getDates => getDates.datetime === dateInput);
         console.log(dataset);
@@ -130,10 +150,11 @@ function filterAll(dataset) {
 
 };
 
+// updates the table
 updateTable(sightings);
 //complete the click handler for the form
 submit.on("click", function() {
     d3.event.preventDefault();
-    var result = filterAll(sightings);
-    updateTable(result);
+    var result = filterAll(sightings); // invokes the dynamic filter function
+    updateTable(result); // updates the results
 });
