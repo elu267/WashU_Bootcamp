@@ -1,0 +1,1 @@
+FLASK_APP=Belly_Button_Bio/app.py flask run
