@@ -92,7 +92,7 @@ d3.csv("data.csv", function(error, censusData) {
     //     .y(d => yHealthScale(d.healthcare));
     console.log(censusData);
     // append circles
-    var circlesGroup = chartGroup.selectAll("g")
+    var circlesGroup = chartGroup.selectAll("stateCircle") // "stateCircle was previously g tag"
         .data(censusData)
         .enter().append("g");
     console.log(circlesGroup);
