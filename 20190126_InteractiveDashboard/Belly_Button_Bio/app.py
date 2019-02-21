@@ -27,8 +27,8 @@ Base = automap_base()
 Base.prepare(db.engine, reflect=True)
 
 # Save references to each table
-Samples_Metadata = Base.classes.sample_metadata
-Samples = Base.classes.samples
+Samples_Metadata = Base.classes.sample_metadata #sample_metadata is the name of the table
+Samples = Base.classes.samples #samples is the name of the other table in the database
 
 
 @app.route("/")
@@ -82,7 +82,7 @@ def sample_metadata(sample):
     return jsonify(sample_metadata)
 
 
-@app.route("/samples/<sample>")
+@app.route("/samples/<sample>") # the <sample> is the sample ID that needs to be given to get the sample output values
 def samples(sample):
     """Return `otu_ids`, `otu_labels`,and `sample_values`."""
     stmt = db.session.query(Samples).statement
